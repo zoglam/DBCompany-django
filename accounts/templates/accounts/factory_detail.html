@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+
+{% block body %}
+
+<div class="container">    
+            <ul>
+                        <li>ID: {{ id }}</b></li>
+                        <li>Название: <b> {{ name }} </b></li>
+                        <li>Телефон:<b> {{ phone }} </b></li>
+                        <li>Адрес:<b> {{ address }} </b></li>
+            </ul>
+<br>
+<br>
+
+<div class="table-responsive">
+<table class="table">            
+<form action="good/" method="POST">
+    {% csrf_token %}
+    <h4>Добавить товар</h4>
+    <tr>
+        <th>Наименование</th>
+        <th>Количество</th>
+        <th></th>
+    </tr>
+    <tr>
+                    
+                    <th><input type="text" name="name" /></th>
+                    <th><input type="number" name="count" /></th>  
+                    <th><input type="submit" value="Добавить"></th>
+                </tr>
+    </form>
+
+</table>
+</div>
+<br>
+<br>
+<br>
+
+
+<div class="table-responsive">
+<table class="table">            
+    <form action="transport/" method="POST">
+        {% csrf_token %}
+        <h4>Добавить транспорт</h4>
+        <tr>
+            <th>Название</th>
+            <th>Телефон</th>
+            <th>Адрес</th>
+        </tr>
+        <tr>
+                        
+                        <th><input type="text" name="name" /></th>
+                        <th><input type="text" name="phone" /></th>
+                        <th><input type="text" name="address" /></th>                              
+                        <th><input type="submit" value="Добавить"></th>
+                    </tr>
+        </form>
+
+    </table>
+</div>
+</div>
+
+{%endblock%}

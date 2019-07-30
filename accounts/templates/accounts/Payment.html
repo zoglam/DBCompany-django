@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+
+{% block body %}
+
+<div class="container">
+            <div class="table-responsive">
+<table class="table">
+        
+        <tr>
+            <th>Наименование</th>
+            <th>Получатель</th>
+            <th>Дата</th>
+            <th>Счет получателя</th>
+            <th>Сумма платежа</th>
+            <th>Сумма с НДС</th>
+            <th>НДС</th>
+            <th></th>
+            </tr>
+            {%for payment in all_payment%}
+            <tr>
+                        <th>{{ payment.name }}</th>
+                        <th>{{ payment.id_client }}</th>
+                        <th>{{ payment.date }}</th>
+                        <th>{{ payment.check_name }}</th>
+                        <th>{{ payment.price }}</th>
+                        <th>{{ payment.price_nds }}</th>
+                        <th>{{ payment.nds }}</th>
+                        <th><a href="{{payment.id}}/delete/">Удалить</a></th>
+            </tr>
+ 
+            {%endfor%}
+            <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th>{{ sum1 }} - Итог</th>
+                        <th>{{ sum2 }} - Итог</th>
+                        <th></th>
+                        <th></th>
+            </tr>
+      </table>
+
+</div>
+</div>
+{%endblock%}

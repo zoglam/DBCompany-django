@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+<h1>HOME</h1>
+{%block head%}
+<title>HOME</title>    
+{%endblock%}
+</head>
+<body>
+        {% block body %}
+        <div class="container">
+        <div class="text">
+                        <h2><a class="menu_1" href="{% url 'accounts:Check' %}">Счета</a></h2>
+                        <h2><a class="menu_2" href="{% url 'accounts:Client' %}">Клиенты</a></h2>
+                        <h2><a class="menu_3" href="{% url 'accounts:Factory' %}">Заводы</a></h2>
+                        <h2><a class="menu_4" href="{% url 'accounts:Good' %}">Товары</a></h2>
+                        <h2><a class="menu_5" href="{% url 'accounts:Payment' %}">Платежное поручение</a></h2>
+                        <h2><a class="menu_6" href="{% url 'accounts:Transport' %}">Транспорт</a></h2>
+                    </div>
+                </div>
+        
+        {% endblock %}   
+    
+</body>
+</html>
+

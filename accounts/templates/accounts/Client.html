@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+
+{% block body %}
+
+
+<div class="container">
+        <div class="table-responsive">
+<table class="table">
+        
+        <tr>
+                <th>ID</th>
+                <th>Имя</th>
+                <th>Телефон</th>
+                <th>Адрес</th>
+                <th></th>
+                <th></th>
+            </tr>
+            {%for client in all_client%}
+            <tr>
+                        <th><a href="{{ client.id }}/">{{ client.id }}</a></th>
+                        <th>{{ client.name }}</th>
+                        <th>{{ client.phone }}</th>
+                        <th>{{ client.address }}</th>
+                        <th><a href="{{client.id}}/edit/">Изменить</a></th>
+                        <th><a href="{{client.id}}/delete/">Удалить</a></th>
+            </tr>
+            {%endfor%}
+            
+            <form action="create/" method="POST">
+                {% csrf_token %}
+                
+                                <th> </th>
+                                <th><input type="text" name="name" /></th>
+                                <th><input type="number" name="phone" /></th>
+                                <th><input type="text" name="address" /></th>      
+                                <th><input type="submit" value="Добавить"></th>
+                                <th></th>
+          
+                </form>
+      </table>
+</div>
+
+
+
+
+</div>
+{%endblock%}

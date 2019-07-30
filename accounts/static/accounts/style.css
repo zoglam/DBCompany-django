@@ -1,0 +1,17 @@
+.menu_1, .menu_2, .menu_3,
+.menu_4, .menu_5, .menu_6 {
+    text-decoration: none;
+    color: black;
+    display: block;
+    width: 100%;
+    height: 40px;
+    font-size: 25px;
+}
+
+.menu_1:hover, .menu_2:hover, .menu_3:hover,
+.menu_4:hover, .menu_5:hover, .menu_6:hover {
+    background: linear-gradient(to bottom, aliceblue, #fff);
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    text-decoration: none;
+    color: #000;
+}

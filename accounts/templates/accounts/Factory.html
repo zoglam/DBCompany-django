@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+
+{% block body %}
+
+
+<div class="container">
+        <div class="table-responsive">
+<table class="table">
+        
+        <tr>
+                <th>ID</th>
+                <th>Название</th>
+                <th>Телефон</th>
+                <th>Адрес</th>
+                <th></th>
+                <th></th>
+            </tr>
+            {%for factory in all_factory%}
+            <tr>
+                        <th><a href="{{ factory.id }}/">{{ factory.id }}</a></th>
+                        <th>{{ factory.name }}</th>
+                        <th>{{ factory.phone }}</th>
+                        <th>{{ factory.address }}</th>
+                        <th><a href="{{factory.id}}/edit/">Изменить</a></th>
+                        <th><a href="{{factory.id}}/delete/">Удалить</a></th>
+            </tr>
+            {%endfor%}
+            
+            <form action="create_factory/" method="POST">
+                {% csrf_token %}
+                
+                                <th> </th>
+                                <th><input type="text" name="name" /></th>
+                                <th><input type="number" name="phone" /></th>
+                                <th><input type="text" name="address" /></th>      
+                                <th><input type="submit" value="Добавить"></th>
+                                <th></th>
+          
+                </form>
+      </table>
+</div>
+
+
+
+
+</div>
+{%endblock%}

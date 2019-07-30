@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+
+{% block body %}
+
+<div class="container">
+            <div class="table-responsive">
+<table class="table">
+        
+        <tr>
+                <th>ID</th>
+                <th>Имя</th>
+                 <th>Имя клиента</th>
+                <th>Цена</th>
+                <th>Дата</th>
+                <th></th>
+            </tr>
+            {%for check in all_check%}
+            <tr>
+                        <th>{{ check.id }}</th>
+                        <th>{{ check.name }}</th>
+                        <th>{{ check.id_client }}</th>
+                        <th>{{ check.price }}</th>
+                        <th>{{ check.date }}</th>
+                        <th><a href="{{check.id}}/delete/">Удалить</a></th>
+            </tr>
+ 
+            {%endfor%}
+            <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th>                              
+                              {{ sum }} - Итог                              
+                        </th>
+                        <th></th>
+            </tr>
+      </table>
+</div>
+
+</div>
+{%endblock%}

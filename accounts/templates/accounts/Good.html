@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+
+{% block body %}
+
+<div class="container">
+            <div class="table-responsive">
+<table class="table">
+        
+        <tr>
+                <th>ID</th>
+                <th>Наименование</th>
+                 <th>Производитель</th>
+                <th>Количество</th>
+                <th></th>
+            </tr>
+            {%for good in all_good%}
+            <tr>
+                        <th>{{ good.id }}</th>
+                        <th>{{ good.name }}</th>
+                        <th>{{ good.id_factory }}</th>
+                        <th>{{ good.count }}</th>
+                        <th><a href="{{good.id}}/delete/">Удалить</a></th>
+            </tr>
+ 
+            {%endfor%}
+            <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th>                              
+                              {{ sum }} - общее количество                              
+                        </th>
+                        <th></th>
+            </tr>
+      </table>
+</div>
+
+</div>
+{%endblock%}
