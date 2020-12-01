@@ -1,12 +1,12 @@
-##python version:
+## python version:
 ```
 python 3.6
 ```
-##Install requirements from file
+## Install requirements from file
 ```
 sudo python3 -m pip install -r Requirements.txt
 ```
-##Running:
+## Running:
 ```
 sudo python3 manage.py runserver localhost:port
 ```
